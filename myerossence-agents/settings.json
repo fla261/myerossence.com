@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(curl*)",
+      "Read",
+      "Write",
+      "Edit",
+      "Grep",
+      "Glob",
+      "WebFetch",
+      "WebSearch",
+      "mcp__supabase__execute_sql",
+      "mcp__supabase__list_tables",
+      "mcp__supabase__apply_migration",
+      "mcp__supabase__get_logs",
+      "mcp__supabase__list_edge_functions",
+      "Skill(master)",
+      "Skill(master:*)",
+      "Skill(agent-content)",
+      "Skill(agent-content:*)",
+      "Skill(agent-seo)",
+      "Skill(agent-seo:*)",
+      "Skill(agent-links)",
+      "Skill(agent-links:*)",
+      "Skill(agent-social)",
+      "Skill(agent-social:*)",
+      "Skill(agent-prices)",
+      "Skill(agent-prices:*)",
+      "Skill(agent-analytics)",
+      "Skill(agent-analytics:*)",
+      "Skill(agent-affiliates)",
+      "Skill(agent-affiliates:*)"
+    ]
+  }
+}

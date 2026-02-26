@@ -1,0 +1,11 @@
+{
+  "name": "myerossence-agents",
+  "version": "1.0.0",
+  "description": "8 agenți AI pentru MyErossence: 1 Master PM + 7 specialiști (Analytics, Links, Affiliates, Prices, Content, SEO, Social Media). Fiecare agent cercetează, analizează, planifică, execută și raportează.",
+  "author": {
+    "name": "Flavian"
+  },
+  "keywords": ["myerossence", "hair-care", "affiliate", "agents", "seo", "content", "social-media", "analytics"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
