@@ -3,175 +3,460 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shop premium natural hair care products. Olaplex, Kerastase, Moroccanoil, Briogeo & more.">
+  <meta name="description" content="Shop our curated collection of luxury organic beauty, skincare, hair care, body care and wellness products. Premium affiliate selections.">
   <meta name="theme-color" content="#0c1518">
-  <title>Shop — MyErossence</title>
 
+  <title>Shop All Products | MyErossence</title>
+
+  <!-- DNS Prefetch Social -->
+  <link rel="dns-prefetch" href="//instagram.com">
+  <link rel="dns-prefetch" href="//tiktok.com">
+  <link rel="dns-prefetch" href="//youtube.com">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/scroll-animations.css">
+  <link rel="stylesheet" href="css/bento-grid.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Shop All Products",
+    "description": "Curated luxury organic beauty, skincare, hair care, body care and wellness products.",
+    "url": "https://myerossence.com/shop.html"
+  }
+  </script>
 </head>
 <body>
+  <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to content</a>
 
-  <div class="cookie-banner" id="cookie-banner" style="display:none;">
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-banner__inner">
-      <p>We use cookies to enhance your experience. <a href="privacy.html">Learn more</a></p>
+      <p class="cookie-banner__text">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="privacy.html">Learn more</a></p>
       <div class="cookie-banner__actions">
-        <button class="btn btn--sm btn--primary cookie-accept">Accept</button>
-        <button class="btn btn--sm btn--secondary cookie-decline">Decline</button>
+        <button type="button" class="btn btn--sm btn--primary" data-cookie-accept>Accept</button>
+        <button type="button" class="btn btn--sm btn--secondary" data-cookie-decline>Decline</button>
       </div>
     </div>
   </div>
 
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>&#10022; Discover Our Curated Selection | Organic Formulas | Eco-Crafted in Europe</p>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header class="header" id="header">
     <div class="header__inner">
-      <div class="header__logo"><a href="index.html">MyErossence</a></div>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav-menu" role="navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="logo-text">MyErossence</span>
+        </a>
+      </div>
+
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="header__nav-link">Home</a>
+        <a href="shop.html" class="header__nav-link active">Shop</a>
+        <a href="about.html" class="header__nav-link">About</a>
+        <a href="quiz.html" class="header__nav-link">Quiz</a>
+        <a href="contact.html" class="header__nav-link">Contact</a>
+        <a href="blog.html" class="header__nav-link">Blog</a>
       </nav>
+
+      <div class="header__actions">
+        <div class="header__social hidden-mobile">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+
+        <button type="button" class="header__action-btn" data-search-open aria-label="Search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a href="wishlist.html" class="header__action-btn" aria-label="Wishlist">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="header__badge wishlist-count" style="display: none;">0</span>
+        </a>
+
+        <button type="button" class="header__action-btn header__menu-btn mobile-nav-toggle" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav__overlay mobile-nav-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav__header">
+      <span class="mobile-nav__title">Menu</span>
+      <button type="button" class="mobile-nav__close mobile-nav-close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">Home</a>
+      <a href="shop.html" class="mobile-nav__link active">Shop</a>
+      <a href="about.html" class="mobile-nav__link">About</a>
+      <a href="quiz.html" class="mobile-nav__link">Quiz</a>
+      <a href="contact.html" class="mobile-nav__link">Contact</a>
+      <a href="blog.html" class="mobile-nav__link">Blog</a>
+    </div>
+  </nav>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal__inner">
+      <div class="search-modal__header">
+        <input type="search" class="search-modal__input" placeholder="Search products..." id="searchInput" autocomplete="off">
+        <button type="button" class="search-modal__close" data-search-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-modal__results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
   <main id="main-content">
+
+    <!-- Page Header -->
+    <section class="editorial-hero editorial-hero--compact">
+      <div class="editorial-hero__bg">
+        <div class="editorial-hero__gradient"></div>
+      </div>
+      <div class="editorial-hero__content scroll-reveal">
+        <div class="section-eyebrow" style="justify-content: center;">The Collection</div>
+        <h1 class="editorial-hero__title">
+          Curated <em>Beauty &amp; Wellness</em>
+        </h1>
+        <p class="editorial-hero__subtitle">Handpicked luxury organic products for skin, hair, body, and soul.</p>
+      </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="section" style="padding-top: 3rem; padding-bottom: 0;">
+      <div class="container">
+        <div class="social-feed__filters" id="shopCategoryFilters">
+          <button type="button" class="social-feed__filter active" data-shop-filter="all">All</button>
+          <button type="button" class="social-feed__filter" data-shop-filter="shampoo">Shampoo</button>
+          <button type="button" class="social-feed__filter" data-shop-filter="conditioner">Conditioner</button>
+          <button type="button" class="social-feed__filter" data-shop-filter="hair-oil">Hair Oils</button>
+          <button type="button" class="social-feed__filter" data-shop-filter="scalp-treatment">Scalp Care</button>
+          <button type="button" class="social-feed__filter" data-shop-filter="styling">Styling</button>
+          <button type="button" class="social-feed__filter" data-shop-filter="hair-growth">Hair Growth</button>
+          <button type="button" class="social-feed__filter" data-shop-filter="hair-mask">Hair Masks</button>
+        </div>
+
+        <!-- Sort -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+          <div id="shopProductCount" style="font-size: 0.8125rem; color: var(--text-muted);">0 products</div>
+          <div>
+            <select id="shopSortFilter" style="background: var(--surface); color: var(--text); border: 1px solid var(--glass-border, rgba(212,165,116,0.1)); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.8125rem; cursor: pointer;">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="title-asc">Name: A-Z</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
     <section class="section">
       <div class="container">
-        <div class="section__header">
-          <h1>Shop Premium Hair Care</h1>
-          <p>Expertly curated products from the world's finest brands</p>
+        <div class="products-grid scroll-stagger" id="shopProductsGrid">
+          <!-- Rendered by JS -->
         </div>
 
-        <!-- Filters -->
-        <div class="shop-filters animate-on-scroll">
-          <div class="filter-group">
-            <select id="category-filter" class="filter-select">
-              <option value="">All Categories</option>
-            </select>
-            <select id="brand-filter" class="filter-select">
-              <option value="">All Brands</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <input type="search" id="search-input" class="filter-search" placeholder="Search products...">
-          </div>
-          <div class="product-count" id="product-count"></div>
+        <!-- Empty State -->
+        <div id="shopEmptyState" style="display: none; text-align: center; padding: 4rem 0;">
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 1rem;">No products found in this category.</p>
+          <button type="button" class="btn btn--secondary" data-shop-filter="all">View All Products</button>
         </div>
+      </div>
+    </section>
 
-        <!-- Product Grid -->
-        <div class="product-grid" id="product-grid">
-          <p class="loading">Loading products...</p>
+    <!-- Features Bar -->
+    <section class="features-bar">
+      <div class="container">
+        <div class="features-bar__grid">
+          <div class="features-bar__item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <div>
+              <h4>100% Organic</h4>
+              <p>Pure natural ingredients</p>
+            </div>
+          </div>
+          <div class="features-bar__item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <div>
+              <h4>Clinically Tested</h4>
+              <p>Proven results</p>
+            </div>
+          </div>
+          <div class="features-bar__item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <div>
+              <h4>Crafted in EU</h4>
+              <p>European excellence</p>
+            </div>
+          </div>
+          <div class="features-bar__item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <div>
+              <h4>Curated for You</h4>
+              <p>Trusted partner products</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter">
+      <div class="container">
+        <div class="newsletter__inner scroll-reveal">
+          <div class="newsletter__content">
+            <h2 class="newsletter__title">Join the Inner Circle</h2>
+            <p class="newsletter__text">Subscribe for exclusive offers, beauty rituals, and early access to new collections.</p>
+          </div>
+          <form class="newsletter__form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required class="form-input">
+            <button type="submit" class="btn btn--primary btn--shimmer">Join Now</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <h3>MyErossence</h3>
-          <p>Premium natural hair care, expertly curated.</p>
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">MyErossence</div>
+        <p class="footer__text">Where ancient organic wisdom meets modern beauty science. Transformative luxury beauty &amp; wellness, eco-crafted in Europe.</p>
+        <div class="footer__badges">
+          <span>&#10022; 100% Organic &#10022; Eco-Friendly &#10022; Clinically Tested &#10022; Crafted in EU</span>
         </div>
-        <div class="footer__links">
-          <h4>Shop</h4>
-          <a href="shop.html">All Products</a>
-          <a href="shop.html?category=shampoo">Shampoo</a>
-          <a href="shop.html?category=conditioner">Conditioner</a>
-          <a href="shop.html?category=oil">Hair Oils</a>
-        </div>
-        <div class="footer__links">
-          <h4>Company</h4>
-          <a href="about.html">About Us</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
-          <a href="faq.html">FAQ</a>
-        </div>
-        <div class="footer__links">
-          <h4>Legal</h4>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="impressum.html">Impressum</a>
-          <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.736-.9 10.124-5.864 10.124-11.854z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 MyErossence. All rights reserved.</p>
-        <p class="affiliate-notice">As an Amazon Associate, we earn from qualifying purchases.</p>
+
+      <div class="footer__column">
+        <h4>Shop</h4>
+        <ul class="footer__links">
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html?new=true">New Arrivals</a></li>
+          <li><a href="shop.html?sale=true">Sale</a></li>
+          <li><a href="quiz.html">Find Your Match</a></li>
+        </ul>
       </div>
+
+      <div class="footer__column">
+        <h4>Support</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4>Legal</h4>
+        <ul class="footer__links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 MyErossence. All rights reserved.</p>
+      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">Affiliate Disclosure: This site contains affiliate links. We may earn a small commission at no extra cost to you when you purchase through our links. <a href="affiliate-disclosure.html" style="color: rgba(212,165,116,0.5);">Learn more</a></p>
     </div>
   </footer>
 
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">
+    <div class="toast__icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <div class="toast__content">
+      <p class="toast__title" id="toastTitle">Success</p>
+      <p class="toast__message" id="toastMessage"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="js/supabase.js"></script>
-  <script src="js/products.js"></script>
+  <script src="js/data.js"></script>
   <script src="js/app.js"></script>
   <script>
-    let allProducts = [];
+  /* Shop Page — Filter + Sort + Render */
+  (function() {
+    'use strict';
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      try {
-        // Check URL params for pre-filtering
-        const urlCategory = getQueryParam('category');
+    var grid = document.getElementById('shopProductsGrid');
+    var countEl = document.getElementById('shopProductCount');
+    var sortEl = document.getElementById('shopSortFilter');
+    var emptyEl = document.getElementById('shopEmptyState');
+    var filterBtns = document.querySelectorAll('[data-shop-filter]');
+    if (!grid) return;
 
-        allProducts = await loadProducts();
-        renderFilters(allProducts);
-        updateCount(allProducts.length);
+    var currentFilter = 'all';
+    var currentSort = 'featured';
 
-        // Apply URL filter if present
-        if (urlCategory) {
-          document.getElementById('category-filter').value = urlCategory;
-          applyFilters();
-        } else {
-          renderProductGrid(allProducts);
+    function render() {
+      if (typeof PRODUCTS === 'undefined' || PRODUCTS.length === 0) {
+        countEl.textContent = 'Loading products...';
+        return;
+      }
+
+      var products = PRODUCTS.slice();
+
+      /* Filter */
+      if (currentFilter !== 'all') {
+        products = products.filter(function(p) { return p.category === currentFilter; });
+      }
+
+      /* Sort */
+      switch (currentSort) {
+        case 'price-asc': products.sort(function(a,b){ return a.price - b.price; }); break;
+        case 'price-desc': products.sort(function(a,b){ return b.price - a.price; }); break;
+        case 'newest': products.sort(function(a,b){ return (b.isNew?1:0) - (a.isNew?1:0); }); break;
+        case 'title-asc': products.sort(function(a,b){ return a.title.localeCompare(b.title); }); break;
+      }
+
+      countEl.textContent = products.length + ' product' + (products.length !== 1 ? 's' : '');
+
+      if (products.length === 0) {
+        grid.style.display = 'none';
+        emptyEl.style.display = 'block';
+        return;
+      }
+      grid.style.display = 'grid';
+      emptyEl.style.display = 'none';
+
+      var settings = window.SETTINGS || {};
+      var btnText = settings.affiliateButtonText || 'Shop Now';
+      function getTrackingUrl(p, source) {
+        if (!p.affiliateUrl || p.affiliateUrl === '#') return '';
+        var s = p.slug || ('product-' + p.id);
+        return '/go/' + s + '?url=' + encodeURIComponent(p.affiliateUrl) + '&src=' + (source || 'shop');
+      }
+      var html = '';
+
+      products.forEach(function(p) {
+        var badges = '';
+        if (p.isNew) badges += '<span class="product-badge product-badge--new">New</span>';
+        if (p.isSale) badges += '<span class="product-badge product-badge--sale">Sale</span>';
+
+        var priceHtml = '<span>' + (settings.currencySymbol || '\u20ac') + p.price.toFixed(2) + '</span>';
+        if (p.comparePrice) {
+          priceHtml += '<span class="product-card__price--compare">' + (settings.currencySymbol || '\u20ac') + p.comparePrice.toFixed(2) + '</span>';
         }
 
-        // Filter listeners
-        document.getElementById('category-filter').addEventListener('change', applyFilters);
-        document.getElementById('brand-filter').addEventListener('change', applyFilters);
-        document.getElementById('search-input').addEventListener('input', debounce(applyFilters, 300));
-      } catch (err) {
-        document.getElementById('product-grid').innerHTML = '<p class="error">Failed to load products. Please try again.</p>';
-        console.error(err);
-      }
+        var imgSrc = p.image;
+        var trackUrl = getTrackingUrl(p, 'shop');
+        var affiliateUrl = trackUrl || '#';
+        var target = trackUrl ? ' target="_blank" rel="noopener noreferrer"' : '';
+        var btnClass = trackUrl ? 'product-card__affiliate-btn product-card__affiliate-btn--primary' : 'product-card__affiliate-btn product-card__affiliate-btn--secondary';
+
+        html += '<div class="product-card">' +
+          '<div class="product-card__inner">' +
+            '<div class="product-card__image">' +
+              '<img src="' + imgSrc + '" alt="' + p.title + '" loading="lazy">' +
+              '<div class="product-card__badges">' + badges + '</div>' +
+            '</div>' +
+            '<div class="product-card__info">' +
+              '<p class="product-card__vendor">' + p.vendor + '</p>' +
+              '<h3 class="product-card__title">' + p.title + '</h3>' +
+              '<div class="product-card__price">' + priceHtml + '</div>' +
+              '<a href="' + affiliateUrl + '" class="' + btnClass + '"' + target + '>' + btnText + '</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      });
+
+      grid.innerHTML = html;
+    }
+
+    /* Filter clicks */
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentFilter = this.dataset.shopFilter;
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('[data-shop-filter="' + currentFilter + '"]').forEach(function(b) { b.classList.add('active'); });
+        render();
+      });
     });
 
-    function applyFilters() {
-      const category = document.getElementById('category-filter').value;
-      const brand = document.getElementById('brand-filter').value;
-      const search = document.getElementById('search-input').value.toLowerCase();
+    /* Sort */
+    sortEl.addEventListener('change', function() {
+      currentSort = this.value;
+      render();
+    });
 
-      let filtered = allProducts;
-      if (category) filtered = filtered.filter(p => p.category === category);
-      if (brand) filtered = filtered.filter(p => p.brand === brand);
-      if (search) filtered = filtered.filter(p =>
-        p.name.toLowerCase().includes(search) ||
-        (p.brand || '').toLowerCase().includes(search) ||
-        (p.description || '').toLowerCase().includes(search)
-      );
+    /* Initial render (products may be empty, re-render on load) */
+    render();
 
-      renderProductGrid(filtered);
-      updateCount(filtered.length);
-    }
-
-    function updateCount(count) {
-      const el = document.getElementById('product-count');
-      if (el) el.textContent = `${count} product${count !== 1 ? 's' : ''}`;
-    }
-
-    function debounce(fn, ms) {
-      let timer;
-      return (...args) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), ms); };
-    }
+    /* Re-render when Supabase products arrive */
+    document.addEventListener('products-loaded', function() {
+      render();
+    });
+  })();
   </script>
 </body>
 </html>

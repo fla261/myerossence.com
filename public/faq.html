@@ -5,87 +5,336 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="FAQ — MyErossence. Frequently asked questions about our hair care recommendations and affiliate links.">
   <meta name="theme-color" content="#0c1518">
+
   <title>FAQ — MyErossence</title>
+
+  <!-- DNS Prefetch Social -->
+  <link rel="dns-prefetch" href="//instagram.com">
+  <link rel="dns-prefetch" href="//tiktok.com">
+  <link rel="dns-prefetch" href="//youtube.com">
+  <link rel="dns-prefetch" href="//pinterest.com">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/scroll-animations.css">
+  <link rel="stylesheet" href="css/bento-grid.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 <body>
+  <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="privacy.html">Learn more</a></p>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--sm btn--primary" data-cookie-accept>Accept</button>
+        <button type="button" class="btn btn--sm btn--secondary" data-cookie-decline>Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>&#10022; Discover Our Curated Selection | Organic Formulas | Eco-Crafted in Europe</p>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header class="header" id="header">
     <div class="header__inner">
-      <div class="header__logo"><a href="index.html">MyErossence</a></div>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav-menu" role="navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="logo-text">MyErossence</span>
+        </a>
+      </div>
+
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="header__nav-link">Home</a>
+        <a href="shop.html" class="header__nav-link">Shop</a>
+        <a href="about.html" class="header__nav-link">About</a>
+        <a href="quiz.html" class="header__nav-link">Quiz</a>
+        <a href="contact.html" class="header__nav-link">Contact</a>
+        <a href="blog.html" class="header__nav-link">Blog</a>
       </nav>
+
+      <div class="header__actions">
+        <!-- Social Icons (desktop) -->
+        <div class="header__social hidden-mobile">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+
+        <button type="button" class="header__action-btn" data-search-open aria-label="Search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a href="wishlist.html" class="header__action-btn" aria-label="Wishlist">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="header__badge wishlist-count" style="display: none;">0</span>
+        </a>
+
+        <button type="button" class="header__action-btn header__menu-btn mobile-nav-toggle" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav__overlay mobile-nav-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav__header">
+      <span class="mobile-nav__title">Menu</span>
+      <button type="button" class="mobile-nav__close mobile-nav-close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">Home</a>
+      <a href="shop.html" class="mobile-nav__link">Shop</a>
+      <a href="about.html" class="mobile-nav__link">About</a>
+      <a href="quiz.html" class="mobile-nav__link">Quiz</a>
+      <a href="contact.html" class="mobile-nav__link">Contact</a>
+      <a href="faq.html" class="mobile-nav__link active">FAQ</a>
+      <a href="blog.html" class="mobile-nav__link">Blog</a>
+    </div>
+  </nav>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal__inner">
+      <button type="button" class="search-modal__close" data-search-close>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <form class="search-modal__form" action="search.html" method="get">
+        <input type="search" name="q" placeholder="Search our store..." class="search-modal__input search-input">
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Content -->
   <main id="main-content">
     <section class="section">
       <div class="container content-page">
         <h1>Frequently Asked Questions</h1>
 
         <h2>About MyErossence</h2>
-
-        <h3>What is MyErossence?</h3>
-        <p>MyErossence is a hair care product review and recommendation site. We research and curate premium hair care products to help you find what works best for your hair type and needs.</p>
-
-        <h3>Do you sell products directly?</h3>
-        <p>No. We are a review and recommendation site. When you find a product you like, we link you to trusted retailers (like Amazon) where you can purchase it directly.</p>
-
-        <h3>How do you choose which products to feature?</h3>
-        <p>We evaluate products based on ingredient quality, user reviews, brand reputation, and real-world results. We focus on premium, clean formulations from established brands.</p>
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__question">What is MyErossence?</button>
+            <div class="faq__answer">
+              <p>MyErossence is a hair care product review and recommendation site. We research and curate premium hair care products to help you find what works best for your hair type and needs.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Do you sell products directly?</button>
+            <div class="faq__answer">
+              <p>No. We are a review and recommendation site. When you find a product you like, we link you to trusted retailers (like Amazon) where you can purchase it directly.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">How do you choose which products to feature?</button>
+            <div class="faq__answer">
+              <p>We evaluate products based on ingredient quality, user reviews, brand reputation, and real-world results. We focus on premium, clean formulations from established brands.</p>
+            </div>
+          </div>
+        </div>
 
         <h2>Shopping &amp; Links</h2>
-
-        <h3>Are the prices on your site accurate?</h3>
-        <p>We do our best to keep prices current, but prices are set by the retailers and may change. Always check the final price on the retailer's website before purchasing.</p>
-
-        <h3>What are affiliate links?</h3>
-        <p>Affiliate links are special tracking links. When you click a product link on our site and make a purchase, we may earn a small commission at no extra cost to you. This helps support our site. See our <a href="affiliate-disclosure.html">Affiliate Disclosure</a> for full details.</p>
-
-        <h3>Does clicking an affiliate link cost me more?</h3>
-        <p>No. The price you pay is exactly the same whether you use our link or go directly to the retailer's site.</p>
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__question">Are the prices on your site accurate?</button>
+            <div class="faq__answer">
+              <p>We do our best to keep prices current, but prices are set by the retailers and may change. Always check the final price on the retailer's website before purchasing.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">What are affiliate links?</button>
+            <div class="faq__answer">
+              <p>Affiliate links are special tracking links. When you click a product link on our site and make a purchase, we may earn a small commission at no extra cost to you. This helps support our site. See our <a href="affiliate-disclosure.html">Affiliate Disclosure</a> for full details.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Does clicking an affiliate link cost me more?</button>
+            <div class="faq__answer">
+              <p>No. The price you pay is exactly the same whether you use our link or go directly to the retailer's site.</p>
+            </div>
+          </div>
+        </div>
 
         <h2>Hair Care</h2>
-
-        <h3>How do I know which products are right for my hair type?</h3>
-        <p>Each product on our site includes information about which hair types it works best for. You can also filter products by hair type on our <a href="shop.html">Shop</a> page, or read our <a href="blog.html">blog articles</a> for detailed guides.</p>
-
-        <h3>Are the products you recommend natural/organic?</h3>
-        <p>We prioritize products with clean, high-quality ingredients. Many of the brands we feature are known for natural, vegan, and cruelty-free formulations. However, "natural" claims vary — always check the ingredient list on the product page.</p>
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__question">How do I know which products are right for my hair type?</button>
+            <div class="faq__answer">
+              <p>Each product on our site includes information about which hair types it works best for. You can also filter products by hair type on our <a href="shop.html">Shop</a> page, or read our <a href="blog.html">blog articles</a> for detailed guides.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Are the products you recommend natural/organic?</button>
+            <div class="faq__answer">
+              <p>We prioritize products with clean, high-quality ingredients. Many of the brands we feature are known for natural, vegan, and cruelty-free formulations. However, "natural" claims vary — always check the ingredient list on the product page.</p>
+            </div>
+          </div>
+        </div>
 
         <h2>Contact &amp; Support</h2>
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__question">How can I contact you?</button>
+            <div class="faq__answer">
+              <p>Email us at <a href="mailto:hello@myerossence.com">hello@myerossence.com</a>. We typically respond within 24-48 hours.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Can I suggest a product for review?</button>
+            <div class="faq__answer">
+              <p>Yes! We welcome product suggestions. Send us an email and we'll consider it for a future feature or review.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">I have an issue with a product I purchased — can you help?</button>
+            <div class="faq__answer">
+              <p>Since we don't sell products directly, you'll need to contact the retailer where you made the purchase (e.g., Amazon) for order-related issues like returns, refunds, or shipping.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <h3>How can I contact you?</h3>
-        <p>Email us at <a href="mailto:hello@myerossence.com">hello@myerossence.com</a>. We typically respond within 24-48 hours.</p>
-
-        <h3>Can I suggest a product for review?</h3>
-        <p>Yes! We welcome product suggestions. Send us an email and we'll consider it for a future feature or review.</p>
-
-        <h3>I have an issue with a product I purchased — can you help?</h3>
-        <p>Since we don't sell products directly, you'll need to contact the retailer where you made the purchase (e.g., Amazon) for order-related issues like returns, refunds, or shipping.</p>
+    <!-- Newsletter -->
+    <section class="section newsletter">
+      <div class="container">
+        <div class="newsletter__inner scroll-reveal">
+          <div class="newsletter__content">
+            <h2 class="newsletter__title">Join the Inner Circle</h2>
+            <p class="newsletter__text">Subscribe for exclusive offers, beauty rituals, and early access to new collections.</p>
+          </div>
+          <form class="newsletter__form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required class="form-input">
+            <button type="submit" class="btn btn--primary btn--shimmer">Join Now</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__bottom">
-        <p>&copy; 2026 MyErossence. All rights reserved.</p>
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">MyErossence</div>
+        <p class="footer__text">Where ancient organic wisdom meets modern beauty science. Transformative luxury beauty &amp; wellness, eco-crafted in Europe.</p>
+        <div class="footer__badges">
+          <span>&#10022; 100% Organic &#10022; Eco-Friendly &#10022; Clinically Tested &#10022; Crafted in EU</span>
+        </div>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.736-.9 10.124-5.864 10.124-11.854z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__column">
+        <h4>Shop</h4>
+        <ul class="footer__links">
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html?new=true">New Arrivals</a></li>
+          <li><a href="shop.html?sale=true">Sale</a></li>
+          <li><a href="quiz.html">Find Your Match</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4>Support</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4>Legal</h4>
+        <ul class="footer__links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
       </div>
     </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 MyErossence. All rights reserved.</p>
+      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">Affiliate Disclosure: This site contains affiliate links. We may earn a small commission at no extra cost to you when you purchase through our links. <a href="affiliate-disclosure.html" style="color: rgba(212,165,116,0.5);">Learn more</a></p>
+    </div>
   </footer>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">
+    <div class="toast__icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <div class="toast__content">
+      <p class="toast__title" id="toastTitle">Success</p>
+      <p class="toast__message" id="toastMessage"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="js/supabase.js"></script>
+  <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

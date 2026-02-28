@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy Policy — MyErossence. How we collect, use, and protect your personal information.">
+  <meta name="description" content="Find your perfect hair care match — take our quick quiz to get personalized product recommendations.">
   <meta name="theme-color" content="#0c1518">
-  <title>Privacy Policy — MyErossence</title>
+  <title>Hair Care Quiz — MyErossence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
         <a href="index.html" class="header__nav-link">Home</a>
         <a href="shop.html" class="header__nav-link">Shop</a>
         <a href="about.html" class="header__nav-link">About</a>
-        <a href="quiz.html" class="header__nav-link">Quiz</a>
+        <a href="quiz.html" class="header__nav-link active">Quiz</a>
         <a href="contact.html" class="header__nav-link">Contact</a>
         <a href="blog.html" class="header__nav-link">Blog</a>
       </nav>
@@ -84,7 +84,7 @@
       <a href="index.html" class="mobile-nav__link">Home</a>
       <a href="shop.html" class="mobile-nav__link">Shop</a>
       <a href="about.html" class="mobile-nav__link">About</a>
-      <a href="quiz.html" class="mobile-nav__link">Quiz</a>
+      <a href="quiz.html" class="mobile-nav__link active">Quiz</a>
       <a href="contact.html" class="mobile-nav__link">Contact</a>
       <a href="faq.html" class="mobile-nav__link">FAQ</a>
       <a href="blog.html" class="mobile-nav__link">Blog</a>
@@ -106,104 +106,97 @@
   <!-- Main Content -->
   <main id="main-content">
     <section class="section">
-      <div class="container content-page">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last updated:</strong> February 28, 2026</p>
+      <div class="container" style="max-width: 700px;">
+        <div class="section__header" style="text-align: center;">
+          <h1>Find Your Perfect Match</h1>
+          <p>Answer a few quick questions and we'll recommend products tailored to your hair.</p>
+        </div>
 
-        <h2>1. Introduction</h2>
-        <p>MyErossence ("we," "us," or "our") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard information when you visit myerossence.com (the "Site").</p>
+        <div id="quiz-container">
+          <!-- Step 1: Hair Type -->
+          <div class="quiz-step" data-step="1">
+            <h2 class="quiz-step__title">What's your hair type?</h2>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="straight">Straight</button>
+              <button class="quiz-option" data-value="wavy">Wavy</button>
+              <button class="quiz-option" data-value="curly">Curly</button>
+              <button class="quiz-option" data-value="coily">Coily / Textured</button>
+            </div>
+          </div>
 
-        <h2>2. Information We Collect</h2>
-        <h3>Information You Provide</h3>
-        <ul>
-          <li><strong>Newsletter subscription:</strong> Email address when you subscribe to our newsletter</li>
-          <li><strong>Contact form:</strong> Name and email address when you contact us</li>
-        </ul>
-        <h3>Information Collected Automatically</h3>
-        <ul>
-          <li><strong>Usage data:</strong> Pages visited, time spent, referral source</li>
-          <li><strong>Device data:</strong> Browser type, operating system, screen resolution</li>
-          <li><strong>Cookies:</strong> See Section 5 below</li>
-        </ul>
+          <!-- Step 2: Primary Concern -->
+          <div class="quiz-step" data-step="2" style="display: none;">
+            <h2 class="quiz-step__title">What's your main hair concern?</h2>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="damage">Damage & Repair</button>
+              <button class="quiz-option" data-value="growth">Hair Growth & Thinning</button>
+              <button class="quiz-option" data-value="frizz">Frizz & Smoothness</button>
+              <button class="quiz-option" data-value="scalp">Scalp Health</button>
+              <button class="quiz-option" data-value="volume">Volume & Fullness</button>
+              <button class="quiz-option" data-value="moisture">Dryness & Moisture</button>
+            </div>
+          </div>
 
-        <h2>3. How We Use Your Information</h2>
-        <ul>
-          <li>To send you our newsletter (only if you subscribe)</li>
-          <li>To respond to your inquiries</li>
-          <li>To improve our website and content</li>
-          <li>To analyze site traffic and usage patterns</li>
-        </ul>
+          <!-- Step 3: Product Type -->
+          <div class="quiz-step" data-step="3" style="display: none;">
+            <h2 class="quiz-step__title">What are you looking for?</h2>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="shampoo">Shampoo & Conditioner</button>
+              <button class="quiz-option" data-value="hair-oil">Oils & Serums</button>
+              <button class="quiz-option" data-value="scalp-treatment">Scalp Treatments</button>
+              <button class="quiz-option" data-value="hair-mask">Hair Masks</button>
+              <button class="quiz-option" data-value="hair-growth">Growth Treatments</button>
+              <button class="quiz-option" data-value="all">Show Me Everything</button>
+            </div>
+          </div>
 
-        <h2>4. Affiliate Links &amp; Third Parties</h2>
-        <p>Our Site contains affiliate links to third-party retailers, primarily Amazon. When you click these links:</p>
-        <ul>
-          <li>You will be redirected to the retailer's website</li>
-          <li>The retailer may place cookies on your device</li>
-          <li>We may earn a commission on qualifying purchases</li>
-          <li>We do not control or have access to data collected by these third parties</li>
-        </ul>
-        <p>Please review the privacy policies of any third-party sites you visit through our links.</p>
+          <!-- Progress -->
+          <div class="quiz-progress" style="text-align: center; margin-top: 2rem;">
+            <span id="quiz-progress-text">Step 1 of 3</span>
+          </div>
+        </div>
 
-        <h2>5. Cookies</h2>
-        <p>We use cookies to:</p>
-        <ul>
-          <li>Remember your cookie consent preference</li>
-          <li>Analyze website traffic (if analytics are enabled)</li>
-        </ul>
-        <p>You can control cookies through your browser settings. Declining cookies will not affect your ability to browse our Site.</p>
+        <!-- Results (shown after quiz) -->
+        <div id="quiz-results" style="display: none;">
+          <div class="section__header" style="text-align: center;">
+            <h2>Your Personalized Picks</h2>
+            <p id="results-subtitle"></p>
+          </div>
+          <div class="products-grid" id="results-grid"></div>
+          <div style="text-align: center; margin-top: 2rem;">
+            <a href="shop.html" class="btn btn--secondary">Browse All Products</a>
+            <button type="button" class="btn btn--primary" id="retake-quiz" style="margin-left: 0.5rem;">Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <h2>6. Data Retention</h2>
-        <p>We retain your personal data only for as long as necessary for the purposes described in this policy. Newsletter subscribers can unsubscribe at any time.</p>
-
-        <h2>7. Your Rights (GDPR)</h2>
-        <p>If you are located in the European Economic Area (EEA), you have the right to:</p>
-        <ul>
-          <li>Access your personal data</li>
-          <li>Rectify inaccurate data</li>
-          <li>Request deletion of your data</li>
-          <li>Object to processing of your data</li>
-          <li>Data portability</li>
-          <li>Withdraw consent at any time</li>
-        </ul>
-        <p>To exercise these rights, contact us at <a href="mailto:hello@myerossence.com">hello@myerossence.com</a>.</p>
-
-        <h2>8. Data Security</h2>
-        <p>We implement appropriate technical and organizational measures to protect your personal data. However, no method of transmission over the Internet is 100% secure.</p>
-
-        <h2>9. Children's Privacy</h2>
-        <p>Our Site is not directed at children under 16. We do not knowingly collect personal data from children.</p>
-
-        <h2>10. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
-
-        <h2>11. Contact Us</h2>
-        <p>For questions about this Privacy Policy, contact us at:</p>
-        <p><strong>Email:</strong> <a href="mailto:hello@myerossence.com">hello@myerossence.com</a></p>
+    <!-- Newsletter -->
+    <section class="section newsletter">
+      <div class="container">
+        <div class="newsletter__inner scroll-reveal">
+          <div class="newsletter__content">
+            <h2 class="newsletter__title">Join the Inner Circle</h2>
+            <p class="newsletter__text">Subscribe for exclusive offers, beauty rituals, and early access to new collections.</p>
+          </div>
+          <form class="newsletter__form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required class="form-input">
+            <button type="submit" class="btn btn--primary btn--shimmer">Join Now</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Newsletter -->
-  <section class="newsletter-section">
-    <div class="container">
-      <div class="newsletter-content">
-        <h2 class="newsletter-title">Join Our Community</h2>
-        <p class="newsletter-text">Get expert hair care tips, new product alerts, and exclusive recommendations delivered to your inbox.</p>
-        <form class="newsletter-form" data-newsletter-form>
-          <input type="email" name="email" placeholder="Enter your email" required class="newsletter-input">
-          <button type="submit" class="btn btn--primary newsletter-btn">Subscribe</button>
-        </form>
-        <p class="newsletter-disclaimer">No spam, unsubscribe anytime. We respect your privacy.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="footer__inner">
-      <div class="footer__column footer__column--brand">
-        <a href="index.html" class="footer__logo">MyErossence</a>
-        <p class="footer__tagline">Premium beauty & wellness. Curated for you.</p>
+      <div class="footer__brand">
+        <div class="footer__logo">MyErossence</div>
+        <p class="footer__text">Where ancient organic wisdom meets modern beauty science. Transformative luxury beauty &amp; wellness, eco-crafted in Europe.</p>
+        <div class="footer__badges">
+          <span>&#10022; 100% Organic &#10022; Eco-Friendly &#10022; Clinically Tested &#10022; Crafted in EU</span>
+        </div>
         <div class="footer__social">
           <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
           <a href="#" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
@@ -255,5 +248,107 @@
   <script src="js/supabase.js"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    (function() {
+      var answers = {};
+      var currentStep = 1;
+      var totalSteps = 3;
+
+      // Concern to category mapping
+      var concernMap = {
+        'damage': ['shampoo', 'hair-mask', 'hair-oil'],
+        'growth': ['hair-growth', 'scalp-treatment'],
+        'frizz': ['hair-oil', 'shampoo'],
+        'scalp': ['scalp-treatment', 'shampoo'],
+        'volume': ['shampoo', 'hair-growth'],
+        'moisture': ['hair-mask', 'hair-oil', 'shampoo']
+      };
+
+      var steps = document.querySelectorAll('.quiz-step');
+      var progressText = document.getElementById('quiz-progress-text');
+
+      document.getElementById('quiz-container').addEventListener('click', function(e) {
+        var btn = e.target.closest('.quiz-option');
+        if (!btn) return;
+
+        var step = btn.closest('.quiz-step');
+        var stepNum = parseInt(step.getAttribute('data-step'));
+        answers['step' + stepNum] = btn.getAttribute('data-value');
+
+        // Highlight selected
+        var siblings = step.querySelectorAll('.quiz-option');
+        for (var i = 0; i < siblings.length; i++) siblings[i].classList.remove('selected');
+        btn.classList.add('selected');
+
+        setTimeout(function() {
+          if (stepNum < totalSteps) {
+            step.style.display = 'none';
+            var next = document.querySelector('[data-step="' + (stepNum + 1) + '"]');
+            if (next) next.style.display = 'block';
+            currentStep = stepNum + 1;
+            progressText.textContent = 'Step ' + currentStep + ' of ' + totalSteps;
+          } else {
+            showResults();
+          }
+        }, 300);
+      });
+
+      function showResults() {
+        document.getElementById('quiz-container').style.display = 'none';
+        document.getElementById('quiz-results').style.display = 'block';
+
+        var hairType = answers.step1 || '';
+        var concern = answers.step2 || '';
+        var productType = answers.step3 || 'all';
+
+        function waitForProducts() {
+          if (PRODUCTS.length === 0) {
+            document.addEventListener('products-loaded', function() { filterAndShow(); });
+          } else {
+            filterAndShow();
+          }
+        }
+
+        function filterAndShow() {
+          var results = [];
+          var categories = productType === 'all' ? (concernMap[concern] || []) : [productType];
+
+          for (var i = 0; i < PRODUCTS.length; i++) {
+            var p = PRODUCTS[i];
+            var catMatch = categories.length === 0 || categories.indexOf(p.category) > -1;
+            var typeMatch = !hairType || !p.hairType || p.hairType.length === 0 || p.hairType.indexOf(hairType) > -1;
+            if (catMatch || typeMatch) results.push(p);
+          }
+
+          // If no results, show all
+          if (results.length === 0) results = PRODUCTS.slice(0, 8);
+          // Limit to 8
+          results = results.slice(0, 8);
+
+          document.getElementById('results-subtitle').textContent =
+            results.length + ' product' + (results.length !== 1 ? 's' : '') + ' recommended for you';
+
+          if (typeof renderProducts === 'function') {
+            renderProducts(document.getElementById('results-grid'), results);
+          }
+        }
+
+        waitForProducts();
+      }
+
+      document.getElementById('retake-quiz').addEventListener('click', function() {
+        answers = {};
+        currentStep = 1;
+        document.getElementById('quiz-results').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        for (var i = 0; i < steps.length; i++) {
+          steps[i].style.display = i === 0 ? 'block' : 'none';
+          var opts = steps[i].querySelectorAll('.quiz-option');
+          for (var j = 0; j < opts.length; j++) opts[j].classList.remove('selected');
+        }
+        progressText.textContent = 'Step 1 of ' + totalSteps;
+      });
+    })();
+  </script>
 </body>
 </html>
