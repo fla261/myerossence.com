@@ -109,44 +109,38 @@
       <div class="container" style="max-width: 700px;">
         <div class="section__header" style="text-align: center;">
           <h1>Find Your Perfect Match</h1>
-          <p>Answer a few quick questions and we'll recommend products tailored to your hair.</p>
+          <p>Answer a few quick questions and we'll recommend the best premium beauty products for you.</p>
         </div>
 
         <div id="quiz-container">
-          <!-- Step 1: Hair Type -->
+          <!-- Step 1: Beauty Focus -->
           <div class="quiz-step" data-step="1">
-            <h2 class="quiz-step__title">What's your hair type?</h2>
+            <h2 class="quiz-step__title">What's your beauty focus?</h2>
             <div class="quiz-options">
-              <button class="quiz-option" data-value="straight">Straight</button>
-              <button class="quiz-option" data-value="wavy">Wavy</button>
-              <button class="quiz-option" data-value="curly">Curly</button>
-              <button class="quiz-option" data-value="coily">Coily / Textured</button>
-            </div>
-          </div>
-
-          <!-- Step 2: Primary Concern -->
-          <div class="quiz-step" data-step="2" style="display: none;">
-            <h2 class="quiz-step__title">What's your main hair concern?</h2>
-            <div class="quiz-options">
-              <button class="quiz-option" data-value="damage">Damage & Repair</button>
-              <button class="quiz-option" data-value="growth">Hair Growth & Thinning</button>
-              <button class="quiz-option" data-value="frizz">Frizz & Smoothness</button>
-              <button class="quiz-option" data-value="scalp">Scalp Health</button>
-              <button class="quiz-option" data-value="volume">Volume & Fullness</button>
-              <button class="quiz-option" data-value="moisture">Dryness & Moisture</button>
-            </div>
-          </div>
-
-          <!-- Step 3: Product Type -->
-          <div class="quiz-step" data-step="3" style="display: none;">
-            <h2 class="quiz-step__title">What are you looking for?</h2>
-            <div class="quiz-options">
-              <button class="quiz-option" data-value="shampoo">Shampoo & Conditioner</button>
-              <button class="quiz-option" data-value="hair-oil">Oils & Serums</button>
-              <button class="quiz-option" data-value="scalp-treatment">Scalp Treatments</button>
-              <button class="quiz-option" data-value="hair-mask">Hair Masks</button>
-              <button class="quiz-option" data-value="hair-growth">Growth Treatments</button>
+              <button class="quiz-option" data-value="hair">Hair Care</button>
+              <button class="quiz-option" data-value="skincare">Skincare</button>
+              <button class="quiz-option" data-value="body">Body &amp; Wellness</button>
+              <button class="quiz-option" data-value="gifts">Gift Ideas</button>
               <button class="quiz-option" data-value="all">Show Me Everything</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Concern (dynamic content based on Step 1) -->
+          <div class="quiz-step" data-step="2" style="display: none;">
+            <h2 class="quiz-step__title">What's your main concern?</h2>
+            <div class="quiz-options"></div>
+          </div>
+
+          <!-- Step 3: Product Type (only for hair) -->
+          <div class="quiz-step" data-step="3" style="display: none;">
+            <h2 class="quiz-step__title">What type of product are you looking for?</h2>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="shampoo">Shampoo &amp; Conditioner</button>
+              <button class="quiz-option" data-value="oil">Oils &amp; Serums</button>
+              <button class="quiz-option" data-value="scalp">Scalp Treatments</button>
+              <button class="quiz-option" data-value="mask">Hair Masks &amp; Treatments</button>
+              <button class="quiz-option" data-value="hair-growth">Growth Treatments</button>
+              <button class="quiz-option" data-value="all">Show Me All Hair Products</button>
             </div>
           </div>
 
@@ -254,26 +248,59 @@
       var currentStep = 1;
       var totalSteps = 3;
 
-      // Concern to category mapping
-      var concernMap = {
-        'damage': ['shampoo', 'hair-mask', 'hair-oil'],
-        'growth': ['hair-growth', 'scalp-treatment'],
-        'frizz': ['hair-oil', 'shampoo'],
-        'scalp': ['scalp-treatment', 'shampoo'],
-        'volume': ['shampoo', 'hair-growth'],
-        'moisture': ['hair-mask', 'hair-oil', 'shampoo']
+      // Hair concern → DB categories mapping
+      var hairConcernMap = {
+        'damage': ['shampoo', 'conditioner', 'mask', 'oil', 'treatment'],
+        'growth': ['hair-growth', 'scalp'],
+        'frizz': ['oil', 'shampoo', 'styling'],
+        'scalp': ['scalp', 'shampoo'],
+        'volume': ['shampoo', 'conditioner', 'hair-growth'],
+        'moisture': ['mask', 'oil', 'conditioner']
       };
 
-      var steps = document.querySelectorAll('.quiz-step');
+      // Step 2 options per beauty focus
+      var step2Options = {
+        'hair': [
+          { value: 'damage', label: 'Damage & Repair' },
+          { value: 'growth', label: 'Hair Growth & Thinning' },
+          { value: 'frizz', label: 'Frizz & Smoothness' },
+          { value: 'scalp', label: 'Scalp Health' },
+          { value: 'volume', label: 'Volume & Fullness' },
+          { value: 'moisture', label: 'Dryness & Moisture' }
+        ],
+        'skincare': [
+          { value: 'antiaging', label: 'Anti-Aging & Wrinkles' },
+          { value: 'hydration', label: 'Hydration & Moisture' },
+          { value: 'brightening', label: 'Brightening & Glow' },
+          { value: 'acne', label: 'Acne & Blemishes' },
+          { value: 'sensitive', label: 'Sensitive Skin' },
+          { value: 'all-skin', label: 'Show All Skincare' }
+        ],
+        'body': [
+          { value: 'moisturize', label: 'Body Moisturizing' },
+          { value: 'selfcare', label: 'Self-Care & Relaxation' },
+          { value: 'fragrance', label: 'Fragrance & Body Mists' },
+          { value: 'all-body', label: 'Show All Body Care' }
+        ]
+      };
+
+      var step2Titles = {
+        'hair': "What's your main hair concern?",
+        'skincare': "What's your skin concern?",
+        'body': "What are you looking for?"
+      };
+
+      var container = document.getElementById('quiz-container');
       var progressText = document.getElementById('quiz-progress-text');
 
-      document.getElementById('quiz-container').addEventListener('click', function(e) {
+      container.addEventListener('click', function(e) {
         var btn = e.target.closest('.quiz-option');
         if (!btn) return;
 
         var step = btn.closest('.quiz-step');
         var stepNum = parseInt(step.getAttribute('data-step'));
-        answers['step' + stepNum] = btn.getAttribute('data-value');
+        var value = btn.getAttribute('data-value');
+        answers['step' + stepNum] = value;
 
         // Highlight selected
         var siblings = step.querySelectorAll('.quiz-option');
@@ -281,23 +308,55 @@
         btn.classList.add('selected');
 
         setTimeout(function() {
-          if (stepNum < totalSteps) {
-            step.style.display = 'none';
-            var next = document.querySelector('[data-step="' + (stepNum + 1) + '"]');
-            if (next) next.style.display = 'block';
-            currentStep = stepNum + 1;
-            progressText.textContent = 'Step ' + currentStep + ' of ' + totalSteps;
-          } else {
+          if (stepNum === 1) {
+            if (value === 'all' || value === 'gifts') {
+              showResults();
+            } else {
+              buildStep2(value);
+              step.style.display = 'none';
+              document.querySelector('[data-step="2"]').style.display = 'block';
+              currentStep = 2;
+              totalSteps = value === 'hair' ? 3 : 2;
+              progressText.textContent = 'Step 2 of ' + totalSteps;
+            }
+          } else if (stepNum === 2) {
+            if (answers.step1 === 'hair') {
+              step.style.display = 'none';
+              document.querySelector('[data-step="3"]').style.display = 'block';
+              currentStep = 3;
+              progressText.textContent = 'Step 3 of 3';
+            } else {
+              showResults();
+            }
+          } else if (stepNum === 3) {
             showResults();
           }
         }, 300);
       });
 
+      function buildStep2(focus) {
+        var step2 = document.querySelector('[data-step="2"]');
+        var title = step2.querySelector('.quiz-step__title');
+        var optionsDiv = step2.querySelector('.quiz-options');
+
+        title.textContent = step2Titles[focus] || "What's your main concern?";
+        optionsDiv.innerHTML = '';
+
+        var options = step2Options[focus] || [];
+        for (var i = 0; i < options.length; i++) {
+          var btn = document.createElement('button');
+          btn.className = 'quiz-option';
+          btn.setAttribute('data-value', options[i].value);
+          btn.textContent = options[i].label;
+          optionsDiv.appendChild(btn);
+        }
+      }
+
       function showResults() {
-        document.getElementById('quiz-container').style.display = 'none';
+        container.style.display = 'none';
         document.getElementById('quiz-results').style.display = 'block';
 
-        var hairType = answers.step1 || '';
+        var focus = answers.step1 || 'all';
         var concern = answers.step2 || '';
         var productType = answers.step3 || 'all';
 
@@ -311,18 +370,48 @@
 
         function filterAndShow() {
           var results = [];
-          var categories = productType === 'all' ? (concernMap[concern] || []) : [productType];
 
-          for (var i = 0; i < PRODUCTS.length; i++) {
-            var p = PRODUCTS[i];
-            var catMatch = categories.length === 0 || categories.indexOf(p.category) > -1;
-            var typeMatch = !hairType || !p.hairType || p.hairType.length === 0 || p.hairType.indexOf(hairType) > -1;
-            if (catMatch || typeMatch) results.push(p);
+          if (focus === 'all') {
+            // Show top-rated variety
+            var sorted = PRODUCTS.slice().sort(function(a, b) { return (b.rating || 0) - (a.rating || 0); });
+            results = sorted.slice(0, 8);
+          } else if (focus === 'gifts') {
+            for (var i = 0; i < PRODUCTS.length; i++) {
+              if (PRODUCTS[i].category === 'set') results.push(PRODUCTS[i]);
+            }
+            if (results.length < 8) {
+              var sorted2 = PRODUCTS.slice().sort(function(a, b) { return (b.rating || 0) - (a.rating || 0); });
+              for (var k = 0; k < sorted2.length && results.length < 8; k++) {
+                if (results.indexOf(sorted2[k]) === -1) results.push(sorted2[k]);
+              }
+            }
+          } else if (focus === 'skincare') {
+            for (var i = 0; i < PRODUCTS.length; i++) {
+              if (PRODUCTS[i].category === 'skincare') results.push(PRODUCTS[i]);
+            }
+          } else if (focus === 'body') {
+            for (var i = 0; i < PRODUCTS.length; i++) {
+              var cat = PRODUCTS[i].category;
+              if (cat === 'body' || cat === 'set') results.push(PRODUCTS[i]);
+            }
+          } else if (focus === 'hair') {
+            var categories = [];
+            if (productType !== 'all') {
+              categories = [productType];
+            } else if (concern && hairConcernMap[concern]) {
+              categories = hairConcernMap[concern];
+            }
+
+            for (var i = 0; i < PRODUCTS.length; i++) {
+              var p = PRODUCTS[i];
+              if (p.category === 'skincare' || p.category === 'body') continue;
+              if (categories.length === 0 || categories.indexOf(p.category) > -1) {
+                results.push(p);
+              }
+            }
           }
 
-          // If no results, show all
           if (results.length === 0) results = PRODUCTS.slice(0, 8);
-          // Limit to 8
           results = results.slice(0, 8);
 
           document.getElementById('results-subtitle').textContent =
@@ -339,14 +428,16 @@
       document.getElementById('retake-quiz').addEventListener('click', function() {
         answers = {};
         currentStep = 1;
+        totalSteps = 3;
         document.getElementById('quiz-results').style.display = 'none';
-        document.getElementById('quiz-container').style.display = 'block';
-        for (var i = 0; i < steps.length; i++) {
-          steps[i].style.display = i === 0 ? 'block' : 'none';
-          var opts = steps[i].querySelectorAll('.quiz-option');
+        container.style.display = 'block';
+        var allSteps = container.querySelectorAll('.quiz-step');
+        for (var i = 0; i < allSteps.length; i++) {
+          allSteps[i].style.display = i === 0 ? 'block' : 'none';
+          var opts = allSteps[i].querySelectorAll('.quiz-option');
           for (var j = 0; j < opts.length; j++) opts[j].classList.remove('selected');
         }
-        progressText.textContent = 'Step 1 of ' + totalSteps;
+        progressText.textContent = 'Step 1 of 3';
       });
     })();
   </script>
