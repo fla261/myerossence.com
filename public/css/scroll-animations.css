@@ -1,0 +1,203 @@
+/* ============================================
+   MyErossence 2027 - Scroll-Driven Animations
+   Pure CSS with IntersectionObserver fallback
+   ============================================ */
+
+/* ---- Scroll Progress Bar ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 10000;
+  background: transparent;
+}
+
+.scroll-progress::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent, #367588), var(--primary));
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* ---- Keyframes ---- */
+@keyframes scroll-fade-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-fade-in-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scroll-slide-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scroll-slide-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scroll-clip-reveal {
+  from { clip-path: inset(100% 0 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes scroll-rotate-in {
+  from { opacity: 0; transform: rotate(-3deg) translateY(30px); }
+  to   { opacity: 1; transform: rotate(0) translateY(0); }
+}
+
+@keyframes scroll-blur-in {
+  from { opacity: 0; filter: blur(10px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+
+@keyframes scroll-parallax {
+  from { transform: translateY(-15%); }
+  to   { transform: translateY(15%); }
+}
+
+@keyframes scroll-progress-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ---- Scroll-Driven Animations (Chrome/Edge 115+) ---- */
+@supports (animation-timeline: view()) {
+  .scroll-progress::after {
+    animation: scroll-progress-fill linear;
+    animation-timeline: scroll(root);
+  }
+
+  .scroll-reveal {
+    animation: scroll-fade-in ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+
+  .scroll-reveal-scale {
+    animation: scroll-fade-in-scale ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .scroll-slide-left {
+    animation: scroll-slide-left ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+
+  .scroll-slide-right {
+    animation: scroll-slide-right ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+
+  .scroll-image-reveal {
+    animation: scroll-clip-reveal ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+
+  .scroll-rotate-in {
+    animation: scroll-rotate-in ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .scroll-blur-in {
+    animation: scroll-blur-in ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .scroll-parallax-slow {
+    animation: scroll-parallax linear both;
+    animation-timeline: view();
+  }
+
+  /* Stagger children */
+  .scroll-stagger > * {
+    animation: scroll-fade-in ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+  .scroll-stagger > *:nth-child(2) { animation-delay: 80ms; }
+  .scroll-stagger > *:nth-child(3) { animation-delay: 160ms; }
+  .scroll-stagger > *:nth-child(4) { animation-delay: 240ms; }
+  .scroll-stagger > *:nth-child(5) { animation-delay: 320ms; }
+  .scroll-stagger > *:nth-child(6) { animation-delay: 400ms; }
+}
+
+/* ---- Fallback for Firefox/Safari (IntersectionObserver) ---- */
+@supports not (animation-timeline: view()) {
+  .scroll-reveal,
+  .scroll-reveal-scale,
+  .scroll-slide-left,
+  .scroll-slide-right,
+  .scroll-image-reveal,
+  .scroll-rotate-in,
+  .scroll-blur-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out, filter 0.7s ease-out, clip-path 0.7s ease-out;
+  }
+
+  .scroll-slide-left { transform: translateX(-40px); }
+  .scroll-slide-right { transform: translateX(40px); }
+  .scroll-blur-in { filter: blur(8px); transform: none; }
+  .scroll-image-reveal { clip-path: inset(100% 0 0 0); transform: none; opacity: 1; }
+
+  .scroll-reveal.is-visible,
+  .scroll-reveal-scale.is-visible,
+  .scroll-slide-left.is-visible,
+  .scroll-slide-right.is-visible,
+  .scroll-rotate-in.is-visible,
+  .scroll-blur-in.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .scroll-image-reveal.is-visible {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .scroll-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .scroll-stagger.is-visible > * { opacity: 1; transform: none; }
+  .scroll-stagger.is-visible > *:nth-child(2) { transition-delay: 80ms; }
+  .scroll-stagger.is-visible > *:nth-child(3) { transition-delay: 160ms; }
+  .scroll-stagger.is-visible > *:nth-child(4) { transition-delay: 240ms; }
+  .scroll-stagger.is-visible > *:nth-child(5) { transition-delay: 320ms; }
+  .scroll-stagger.is-visible > *:nth-child(6) { transition-delay: 400ms; }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal-scale,
+  .scroll-slide-left,
+  .scroll-slide-right,
+  .scroll-image-reveal,
+  .scroll-rotate-in,
+  .scroll-blur-in,
+  .scroll-stagger > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}

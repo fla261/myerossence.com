@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop premium natural hair care products. Olaplex, Kerastase, Moroccanoil, Briogeo & more.">
+  <meta name="theme-color" content="#0c1518">
+  <title>Shop — MyErossence</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/scroll-animations.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="cookie-banner" id="cookie-banner" style="display:none;">
+    <div class="cookie-banner__inner">
+      <p>We use cookies to enhance your experience. <a href="privacy.html">Learn more</a></p>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--sm btn--primary cookie-accept">Accept</button>
+        <button class="btn btn--sm btn--secondary cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header__inner">
+      <div class="header__logo"><a href="index.html">MyErossence</a></div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" role="navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h1>Shop Premium Hair Care</h1>
+          <p>Expertly curated products from the world's finest brands</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="shop-filters animate-on-scroll">
+          <div class="filter-group">
+            <select id="category-filter" class="filter-select">
+              <option value="">All Categories</option>
+            </select>
+            <select id="brand-filter" class="filter-select">
+              <option value="">All Brands</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <input type="search" id="search-input" class="filter-search" placeholder="Search products...">
+          </div>
+          <div class="product-count" id="product-count"></div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="product-grid">
+          <p class="loading">Loading products...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>MyErossence</h3>
+          <p>Premium natural hair care, expertly curated.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Shop</h4>
+          <a href="shop.html">All Products</a>
+          <a href="shop.html?category=shampoo">Shampoo</a>
+          <a href="shop.html?category=conditioner">Conditioner</a>
+          <a href="shop.html?category=oil">Hair Oils</a>
+        </div>
+        <div class="footer__links">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer__links">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 MyErossence. All rights reserved.</p>
+        <p class="affiliate-notice">As an Amazon Associate, we earn from qualifying purchases.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let allProducts = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        // Check URL params for pre-filtering
+        const urlCategory = getQueryParam('category');
+
+        allProducts = await loadProducts();
+        renderFilters(allProducts);
+        updateCount(allProducts.length);
+
+        // Apply URL filter if present
+        if (urlCategory) {
+          document.getElementById('category-filter').value = urlCategory;
+          applyFilters();
+        } else {
+          renderProductGrid(allProducts);
+        }
+
+        // Filter listeners
+        document.getElementById('category-filter').addEventListener('change', applyFilters);
+        document.getElementById('brand-filter').addEventListener('change', applyFilters);
+        document.getElementById('search-input').addEventListener('input', debounce(applyFilters, 300));
+      } catch (err) {
+        document.getElementById('product-grid').innerHTML = '<p class="error">Failed to load products. Please try again.</p>';
+        console.error(err);
+      }
+    });
+
+    function applyFilters() {
+      const category = document.getElementById('category-filter').value;
+      const brand = document.getElementById('brand-filter').value;
+      const search = document.getElementById('search-input').value.toLowerCase();
+
+      let filtered = allProducts;
+      if (category) filtered = filtered.filter(p => p.category === category);
+      if (brand) filtered = filtered.filter(p => p.brand === brand);
+      if (search) filtered = filtered.filter(p =>
+        p.name.toLowerCase().includes(search) ||
+        (p.brand || '').toLowerCase().includes(search) ||
+        (p.description || '').toLowerCase().includes(search)
+      );
+
+      renderProductGrid(filtered);
+      updateCount(filtered.length);
+    }
+
+    function updateCount(count) {
+      const el = document.getElementById('product-count');
+      if (el) el.textContent = `${count} product${count !== 1 ? 's' : ''}`;
+    }
+
+    function debounce(fn, ms) {
+      let timer;
+      return (...args) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), ms); };
+    }
+  </script>
+</body>
+</html>
