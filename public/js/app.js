@@ -25,11 +25,11 @@
     return '\u00a3' + price.toFixed(2);
   }
 
-  // Build affiliate tracking URL via /go/ redirect page
+  // Build affiliate tracking URL via /go/SLUG (Cloudflare Worker handles redirect + tracking)
   function getTrackingUrl(product, source) {
     if (!product.affiliateUrl || product.affiliateUrl === '#') return '';
     var slug = product.slug || ('product-' + product.id);
-    return '/go/?slug=' + encodeURIComponent(slug) + '&url=' + encodeURIComponent(product.affiliateUrl) + '&src=' + (source || 'site');
+    return '/go/' + encodeURIComponent(slug);
   }
 
   // ==========================================

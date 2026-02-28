@@ -53,7 +53,7 @@ function renderProductCard(product) {
         <div class="product-tags">${hairTypes}</div>
         <div class="product-footer">
           <span class="product-price">${priceDisplay}</span>
-          <a href="/go/?slug=${encodeURIComponent(product.slug)}&url=${encodeURIComponent(product.affiliateUrl || '#')}&src=product" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <a href="/go/${encodeURIComponent(product.slug)}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
