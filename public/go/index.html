@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting... | MyErossence</title>
+  <style>
+    body {
+      background: #0c1518;
+      color: #e8ddd3;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .redirect-box {
+      text-align: center;
+      padding: 2rem;
+    }
+    .redirect-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #D4A574;
+      margin-bottom: 0.5rem;
+    }
+    .redirect-box p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(212,165,116,0.3);
+      border-top-color: #D4A574;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 1rem auto;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .fallback { display: none; margin-top: 1.5rem; }
+    .fallback a {
+      color: #D4A574;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="redirect-box">
+    <h2>MyErossence</h2>
+    <div class="spinner"></div>
+    <p>Taking you to the product...</p>
+    <div class="fallback" id="fallback">
+      <p>If you're not redirected automatically, <a id="fallbackLink" href="#">click here</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var targetUrl = params.get('url');
+      var src = params.get('src') || 'direct';
+
+      if (!targetUrl) {
+        window.location.href = '/shop.html';
+        return;
+      }
+
+      // Get slug from query param
+      var slug = params.get('slug') || 'unknown';
+
+      // Log click to Supabase (fire and forget)
+      try {
+        var SUPABASE_URL = 'https://xxhpetdcvuinplongdjm.supabase.co';
+        var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4aHBldGRjdnVpbnBsb25nZGptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyNzExMTUsImV4cCI6MjA4Nzg0NzExNX0.i5PpxICG_ojyDVb0UmYORxD7h45UtadokxKkucY3rzw';
+
+        fetch(SUPABASE_URL + '/rest/v1/click_logs', {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            product_slug: slug,
+            referrer: src,
+            user_agent: navigator.userAgent.substring(0, 200)
+          })
+        });
+      } catch(e) {}
+
+      // Show fallback link
+      var fallbackEl = document.getElementById('fallback');
+      var fallbackLink = document.getElementById('fallbackLink');
+      fallbackLink.href = targetUrl;
+      setTimeout(function() { fallbackEl.style.display = 'block'; }, 2000);
+
+      // Redirect immediately
+      window.location.href = targetUrl;
+    })();
+  </script>
+</body>
+</html>
