@@ -24,7 +24,7 @@ function renderArticleCard(article) {
         </div>
       ` : ''}
       <div class="blog-info">
-        <span class="blog-category">${article.category || 'Hair Care'}</span>
+        <span class="blog-category">${article.category || 'Beauty'}</span>
         <h3><a href="article.html?slug=${article.slug}">${article.title}</a></h3>
         <p class="blog-excerpt">${article.excerpt || ''}</p>
         <span class="blog-date">${date}</span>

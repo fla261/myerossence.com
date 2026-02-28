@@ -6,8 +6,8 @@
 
 // ── COLLECTIONS ──────────────────────────────
 var COLLECTIONS = [
-  { id: 1, title: "Best Sellers", slug: "best-sellers", description: "Our most-recommended premium hair care products, backed by thousands of real reviews.", image: "images/placeholder.svg", productIds: [1, 2, 11, 19, 20, 21, 35, 43, 44, 51] },
-  { id: 2, title: "New Arrivals", slug: "new-arrivals", description: "The latest breakthrough formulas and innovative hair care technologies.", image: "images/placeholder.svg", productIds: [27, 31, 41, 43, 46, 51] },
+  { id: 1, title: "Best Sellers", slug: "best-sellers", description: "Our most-recommended premium beauty products, backed by thousands of real reviews.", image: "images/placeholder.svg", productIds: [1, 2, 11, 19, 20, 21, 35, 43, 44, 51] },
+  { id: 2, title: "New Arrivals", slug: "new-arrivals", description: "The latest breakthrough formulas and innovative beauty technologies.", image: "images/placeholder.svg", productIds: [27, 31, 41, 43, 46, 51] },
   { id: 3, title: "Shampoo", slug: "shampoo", description: "Premium sulfate-free and bond-building shampoos for every hair type.", image: "images/placeholder.svg", productIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
   { id: 4, title: "Hair Oils & Serums", slug: "hair-oil", description: "Luxurious oils and serums for shine, repair, and frizz control.", image: "images/placeholder.svg", productIds: [19, 20, 21, 22, 23, 24, 25, 26] },
   { id: 5, title: "Scalp Care", slug: "scalp-treatment", description: "Expert scalp treatments, scrubs, and serums for a healthy foundation.", image: "images/placeholder.svg", productIds: [27, 28, 29, 30, 31, 32, 33, 34] },
@@ -20,7 +20,7 @@ var SOCIAL_POSTS = [
   { platform: 'instagram', image: 'images/placeholder.svg', caption: 'My holy grail Moroccanoil Treatment Original \u2014 instant shine and smoothness in seconds.', url: '#', username: '@myerossence' },
   { platform: 'tiktok', image: 'images/placeholder.svg', caption: '90-day hair growth results with Vegamour GRO Serum. The before & after is unreal.', url: '#', username: '@myerossence' },
   { platform: 'youtube', image: 'images/placeholder.svg', caption: 'Complete wash day routine: Olaplex No.4 + No.5 + K18 mask. Salon results at home.', url: '#', username: 'MyErossence' },
-  { platform: 'pinterest', image: 'images/placeholder.svg', caption: 'The ultimate shelfie: Oribe, Moroccanoil, and Briogeo. Premium hair care essentials.', url: '#', username: 'myerossence' },
+  { platform: 'pinterest', image: 'images/placeholder.svg', caption: 'The ultimate shelfie: Oribe, Moroccanoil, and Briogeo. Premium beauty essentials.', url: '#', username: 'myerossence' },
   { platform: 'instagram', image: 'images/placeholder.svg', caption: 'Mielle Rosemary Mint Oil \u2014 the \u20ac10 product with 200K+ reviews. Worth every penny.', url: '#', username: '@myerossence' },
   { platform: 'tiktok', image: 'images/placeholder.svg', caption: 'K18 mask vs. Olaplex No.8: which bond repair treatment actually works better?', url: '#', username: '@myerossence' }
 ];
