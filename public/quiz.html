@@ -293,6 +293,10 @@
       var container = document.getElementById('quiz-container');
       var progressText = document.getElementById('quiz-progress-text');
 
+      // Show step 1 on init
+      var firstStep = container.querySelector('[data-step="1"]');
+      if (firstStep) firstStep.style.display = 'block';
+
       container.addEventListener('click', function(e) {
         var btn = e.target.closest('.quiz-option');
         if (!btn) return;
