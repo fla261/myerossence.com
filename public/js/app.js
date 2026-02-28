@@ -22,7 +22,7 @@
   }
 
   function formatPrice(price) {
-    return '\u20ac' + price.toFixed(2);
+    return '\u00a3' + price.toFixed(2);
   }
 
   // Build affiliate tracking URL via /go/:slug Worker

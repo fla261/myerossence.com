@@ -105,39 +105,220 @@
 
   <!-- Main Content -->
   <main id="main-content">
+    <style>
+      .about-hero {
+        text-align: center;
+        padding: 4rem 0 3rem;
+      }
+      .about-hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+      .about-hero .lead {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+      .about-divider {
+        width: 60px;
+        height: 2px;
+        background: var(--primary);
+        margin: 2.5rem auto;
+        border: none;
+      }
+      .about-section {
+        max-width: 800px;
+        margin: 0 auto 3.5rem;
+      }
+      .about-section h2 {
+        font-size: 1.75rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .about-section p {
+        color: var(--text-muted);
+        line-height: 1.8;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+      .about-section a {
+        color: var(--primary);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .about-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .about-card {
+        background: var(--surface);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        text-align: center;
+        transition: border-color 0.3s;
+      }
+      .about-card:hover {
+        border-color: rgba(212, 165, 116, 0.3);
+      }
+      .about-card__icon {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+      .about-card__title {
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      .about-card__text {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .about-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .about-cat {
+        background: linear-gradient(135deg, var(--surface), var(--surface-2));
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .about-cat__icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+      .about-cat__title { font-family: var(--font-heading); font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
+      .about-cat__text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+      .about-cta {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2.5rem;
+        background: var(--surface);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+      }
+      .about-cta h2 { margin-bottom: 0.75rem; }
+      .about-cta p { margin-bottom: 1.5rem; }
+      .about-trust {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--glass-border);
+      }
+      .about-trust__item {
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+      .about-trust__item span { display: block; font-size: 1.5rem; margin-bottom: 0.25rem; }
+    </style>
+
     <section class="section">
-      <div class="container content-page">
-        <h1>About MyErossence</h1>
-        <p class="lead">Your curated guide to the world's most effective premium beauty and wellness products.</p>
+      <div class="container">
+        <!-- Hero -->
+        <div class="about-hero">
+          <h1>About MyErossence</h1>
+          <p class="lead">Your curated guide to the world's most effective premium beauty and wellness products.</p>
+        </div>
 
-        <h2>Why We Exist</h2>
-        <p>The beauty market is overwhelming. Thousands of products, endless marketing claims, and no shortage of hype. MyErossence was built for people who want clarity. We sift through the noise to surface the products that are genuinely worth your attention &mdash; from powerhouse hair care by Olaplex and K&eacute;rast&egrave;se, to dermatologist-trusted skincare from La Roche-Posay and Paula's Choice, to indulgent body care by Sol de Janeiro and Aesop.</p>
+        <hr class="about-divider">
 
-        <h2>How We Curate</h2>
-        <p>Every product featured on MyErossence is selected through careful research. We don't list everything &mdash; we list what's proven to work. Our curation process considers:</p>
-        <ul>
-          <li><strong>Formulation quality</strong> &mdash; Active ingredients backed by dermatological research, not just marketing buzzwords.</li>
-          <li><strong>Real-world results</strong> &mdash; Products with strong track records and thousands of verified user reviews.</li>
-          <li><strong>Brand integrity</strong> &mdash; Established brands known for consistency, ethical practices, and innovation.</li>
-          <li><strong>Value at every price point</strong> &mdash; From accessible favourites like CeraVe and The Ordinary to luxury essentials from Tatcha and SK-II.</li>
-        </ul>
+        <!-- Why We Exist -->
+        <div class="about-section">
+          <h2>Why We Exist</h2>
+          <p>The beauty market is overwhelming. Thousands of products, endless marketing claims, and no shortage of hype. MyErossence was built for people who want clarity &mdash; we surface the products that are genuinely worth your attention.</p>
+          <p>From powerhouse hair care by Olaplex and K&eacute;rastase, to dermatologist-trusted skincare from La Roche-Posay and Paula's Choice, to indulgent body care by Sol de Janeiro and Aesop.</p>
+        </div>
 
-        <h2>What You'll Find</h2>
-        <p>We cover the full spectrum of premium beauty:</p>
-        <ul>
-          <li><strong>Hair Care</strong> &mdash; Shampoos, conditioners, oils, serums, scalp treatments, masks, and growth solutions from brands like Olaplex, Moroccanoil, Briogeo, and Vegamour.</li>
-          <li><strong>Skincare</strong> &mdash; Cleansers, serums, moisturisers, and treatments from CeraVe, Drunk Elephant, Sunday Riley, The Ordinary, and more.</li>
-          <li><strong>Body &amp; Wellness</strong> &mdash; Body creams, oils, mists, and self-care rituals from Sol de Janeiro, Aesop, and Weleda.</li>
-        </ul>
+        <!-- How We Curate -->
+        <div class="about-section">
+          <h2>How We Curate</h2>
+          <p style="text-align:center;">Every product is selected through careful research. We don't list everything &mdash; we list what's proven to work.</p>
+          <div class="about-cards">
+            <div class="about-card">
+              <span class="about-card__icon">&#9878;</span>
+              <div class="about-card__title">Formulation</div>
+              <div class="about-card__text">Active ingredients backed by dermatological research, not just marketing buzzwords.</div>
+            </div>
+            <div class="about-card">
+              <span class="about-card__icon">&#9733;</span>
+              <div class="about-card__title">Real Results</div>
+              <div class="about-card__text">Products with strong track records and thousands of verified user reviews.</div>
+            </div>
+            <div class="about-card">
+              <span class="about-card__icon">&#9829;</span>
+              <div class="about-card__title">Brand Integrity</div>
+              <div class="about-card__text">Established brands known for consistency, ethical practices, and innovation.</div>
+            </div>
+            <div class="about-card">
+              <span class="about-card__icon">&#10070;</span>
+              <div class="about-card__title">Every Price Point</div>
+              <div class="about-card__text">From accessible favourites like The Ordinary to luxury essentials from Tatcha.</div>
+            </div>
+          </div>
+        </div>
 
-        <h2>Our Commitment to Honesty</h2>
-        <p>MyErossence is an affiliate site. When you click a product link and make a purchase, we may earn a small commission at no extra cost to you. This is how we keep the site running and free to use. It does not influence which products we feature &mdash; our recommendations are based on quality, not commission rates.</p>
-        <p>We believe in full transparency. Every product page clearly identifies affiliate links, and our complete policy is available on our <a href="affiliate-disclosure.html">Affiliate Disclosure</a> page.</p>
+        <hr class="about-divider">
 
-        <h2>Built in Europe</h2>
-        <p>MyErossence is a European-based beauty curation platform. We focus on products available in the EU market, with pricing in euros and delivery information relevant to European customers. Our content is written in English and designed to serve an international audience.</p>
+        <!-- What You'll Find -->
+        <div class="about-section">
+          <h2>What You'll Find</h2>
+          <p style="text-align:center;">We cover the full spectrum of premium beauty across three core categories.</p>
+          <div class="about-categories">
+            <div class="about-cat">
+              <span class="about-cat__icon">&#10024;</span>
+              <div class="about-cat__title">Hair Care</div>
+              <div class="about-cat__text">Shampoos, conditioners, oils, scalp treatments, masks &amp; growth solutions.</div>
+            </div>
+            <div class="about-cat">
+              <span class="about-cat__icon">&#10047;</span>
+              <div class="about-cat__title">Skincare</div>
+              <div class="about-cat__text">Cleansers, serums, moisturisers &amp; treatments for radiant, healthy skin.</div>
+            </div>
+            <div class="about-cat">
+              <span class="about-cat__icon">&#9752;</span>
+              <div class="about-cat__title">Body &amp; Wellness</div>
+              <div class="about-cat__text">Body creams, oils, mists &amp; self-care rituals for head-to-toe luxury.</div>
+            </div>
+          </div>
+        </div>
 
-        <p style="margin-top: 2rem;">Have questions or suggestions? We'd love to hear from you. <a href="contact.html">Get in touch</a>.</p>
+        <!-- Transparency -->
+        <div class="about-section">
+          <h2>Our Commitment to Honesty</h2>
+          <p>MyErossence is an affiliate site. When you purchase through our links, we may earn a small commission at no extra cost to you. This is how we keep the site running and free to use. It does not influence which products we feature &mdash; our recommendations are based on quality, not commission rates.</p>
+          <p>We believe in full transparency. Every product page clearly identifies affiliate links, and our complete policy is available on our <a href="affiliate-disclosure.html">Affiliate Disclosure</a> page.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="about-cta">
+          <h2 style="color: var(--primary);">Find Your Perfect Match</h2>
+          <p style="color: var(--text-muted);">Not sure where to start? Take our quick beauty quiz for personalised recommendations.</p>
+          <a href="quiz.html" class="btn btn--primary btn--shimmer">Take the Quiz</a>
+          <div style="margin-top: 1rem;">
+            <a href="contact.html" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: underline; text-underline-offset: 3px;">Or get in touch with us</a>
+          </div>
+          <div class="about-trust">
+            <div class="about-trust__item"><span>&#10003;</span>Independent Reviews</div>
+            <div class="about-trust__item"><span>&#9878;</span>Research-Backed</div>
+            <div class="about-trust__item"><span>&#127470;&#127466;</span>Based in Europe</div>
+            <div class="about-trust__item"><span>&#128274;</span>Fully Transparent</div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
