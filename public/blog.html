@@ -9,7 +9,7 @@
   <title>Blog — MyErossence</title>
 
   <!-- DNS Prefetch Social -->
-  <link rel="dns-prefetch" href="//instagram.com">
+  <link rel="dns-prefetch" href="//instagram.com"
   <link rel="dns-prefetch" href="//tiktok.com">
   <link rel="dns-prefetch" href="//youtube.com">
   <link rel="dns-prefetch" href="//pinterest.com">
@@ -156,9 +156,15 @@
           <h1>Beauty Blog</h1>
           <p>Expert tips, product reviews, and guides for your best self</p>
         </div>
-        <div class="blog-grid" id="blog-grid">
+              <div id="blogFilters" class="blog-filters"></div>
+
+      <div class="blog-grid" id="blogArticlesGrid">
           <p class="loading">Loading articles...</p>
         </div>
+
+      <div id="blogEmptyState" class="empty-state" style="display:none">
+        <p>No articles found. Check back soon!</p>
+      </div>
       </div>
     </section>
 
@@ -261,15 +267,6 @@
   <script src="js/data.js?v=6"></script>
   <script src="js/blog.js"></script>
   <script src="js/app.js?v=6"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', async function() {
-      try {
-        var articles = await loadArticles();
-        renderBlogGrid(articles);
-      } catch (err) {
-        document.getElementById('blog-grid').innerHTML = '<p>No articles yet. Check back soon!</p>';
-      }
-    });
-  </script>
+  <!-- blog.js handles all initialization via DOMContentLoaded -->
 </body>
 </html>
