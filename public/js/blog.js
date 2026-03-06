@@ -1,4 +1,4 @@
-// MyErossence — Blog (fetch from Supabase)
+// MyErossence — Blog (fetch from Supabase) v2
 // Uses global supabaseFetch() from supabase.js
 
 async function loadArticles(limit = 20) {
