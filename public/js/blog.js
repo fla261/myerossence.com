@@ -1,4 +1,5 @@
 // MyErossence — Blog (fetch from Supabase)
+// Uses global supabaseFetch() from supabase.js
 
 async function loadArticles(limit = 20) {
   const params = `status=eq.published&order=created_at.desc&limit=${limit}`;
@@ -33,14 +34,31 @@ function renderArticleCard(article) {
   `;
 }
 
-function renderBlogGrid(articles, containerId = 'blog-grid') {
-  const container = document.getElementById(containerId);
+function renderBlogGrid(articles) {
+  const container = document.getElementById('blogArticlesGrid');
+  const emptyState = document.getElementById('blogEmptyState');
   if (!container) return;
 
-  if (articles.length === 0) {
-    container.innerHTML = '<p class="no-results">No articles yet. Check back soon!</p>';
+  if (!articles || articles.length === 0) {
+    container.innerHTML = '';
+    if (emptyState) emptyState.style.display = 'block';
     return;
   }
 
+  if (emptyState) emptyState.style.display = 'none';
   container.innerHTML = articles.map(renderArticleCard).join('');
 }
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const articles = await loadArticles();
+    renderBlogGrid(articles);
+  } catch (err) {
+    console.error('Blog load error:', err);
+    const container = document.getElementById('blogArticlesGrid');
+    if (container) {
+      container.innerHTML = '<p class="no-results">Unable to load articles. Please try again later.</p>';
+    }
+  }
+});
